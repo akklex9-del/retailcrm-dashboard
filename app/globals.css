@@ -1,0 +1,182 @@
+:root {
+  --bg0: #f5f6f8;
+  --bg1: #ffffffcc;
+  --card: rgba(255, 255, 255, 0.72);
+  --cardBorder: rgba(0, 0, 0, 0.08);
+  --shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+  --shadowSoft: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --text: rgba(0, 0, 0, 0.88);
+  --muted: rgba(0, 0, 0, 0.55);
+  --blue: #0a84ff;
+  --green: #34c759;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--text);
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(10, 132, 255, 0.12), transparent 55%),
+    radial-gradient(800px 500px at 80% 15%, rgba(52, 199, 89, 0.10), transparent 60%),
+    radial-gradient(1000px 700px at 40% 80%, rgba(10, 132, 255, 0.08), transparent 65%),
+    var(--bg0);
+  font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Display", "SF Pro Text",
+    "Segoe UI", Inter, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.shell {
+  max-width: 1040px;
+  margin: 36px auto;
+  padding: 0 16px;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.title h1 {
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.title p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  border-radius: var(--radius);
+  box-shadow: var(--shadowSoft);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.cardHeader {
+  padding: 14px 14px 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cardBody {
+  padding: 14px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.btnPrimary {
+  background: linear-gradient(180deg, rgba(10, 132, 255, 0.96), rgba(10, 132, 255, 0.86));
+  border-color: rgba(10, 132, 255, 0.55);
+  color: white;
+  box-shadow: 0 18px 40px rgba(10, 132, 255, 0.18);
+}
+
+.btnPrimary:hover {
+  box-shadow: 0 22px 50px rgba(10, 132, 255, 0.22);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.kpi {
+  display: grid;
+  gap: 6px;
+}
+
+.kpiValue {
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.kpiCaption {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.chartWrap {
+  height: 420px;
+}
+
+.loading {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 920px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .shell {
+    margin: 18px auto;
+  }
+  .title h1 {
+    font-size: 22px;
+  }
+  .filters {
+    justify-content: stretch;
+  }
+  .filters .btnPrimary {
+    width: 100%;
+  }
+  .chartWrap {
+    height: 360px;
+  }
+}

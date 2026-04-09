@@ -1,0 +1,21 @@
+{
+  "name": "retailcrm-supabase-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "import:mock": "node scripts/import-mock-orders.mjs",
+    "sync:orders": "node scripts/sync-orders-to-supabase.mjs",
+    "telegram:chatid": "node scripts/telegram-get-chat-id.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "dotenv": "^16.4.7",
+    "next": "^14.2.25",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.1"
+  }
+}
